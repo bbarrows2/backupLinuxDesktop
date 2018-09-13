@@ -1,0 +1,13 @@
+[Unit]
+Description=Send a text on boot or AC reset
+After=network.target
+After=network-online.target
+
+[Service]
+Restart=on-abnormal
+ExecStart=/usr/bin/python3   /home/bradb/onBootTwilio.py
+
+[Install]
+WantedBy=multi-user.target
+
+
